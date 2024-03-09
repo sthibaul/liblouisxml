@@ -33,6 +33,7 @@
 #include <string.h>
 #include "louisxml.h"
 #include <libxml/xpath.h>
+#include <libxml/xpathInternals.h>
 #include "sem_names.h"
 
 typedef struct

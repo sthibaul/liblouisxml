@@ -63,9 +63,9 @@ initialize_contents (void)
 {
 
   saved_braillePageNumberFormat = ud->brl_page_num_format;
-  widestrcpy(saved_printPageNumber, ud->print_page_number, -1);
-  widestrcpy(saved_printPageNumberFirst, ud->print_page_number_first, -1);
-  widestrcpy(saved_printPageNumberLast, ud->print_page_number_last, -1);
+  widestrcpy(saved_printPageNumber, ud->print_page_number);
+  widestrcpy(saved_printPageNumberFirst, ud->print_page_number_first);
+  widestrcpy(saved_printPageNumberLast, ud->print_page_number_last);
   ud->after_contents = 1;
   saved_udContents = ud->contents;
   saved_linesOnPage = ud->lines_on_page;
@@ -191,9 +191,9 @@ make_contents (void)
       styleSpec = &ud->style_stack[ud->style_top];
       styleSpec->curBrlNumFormat = saved_braillePageNumberFormat;
       ud->brl_page_num_format = saved_braillePageNumberFormat;
-      widestrcpy(ud->print_page_number, saved_printPageNumber, -1);
-      widestrcpy(ud->print_page_number_first, saved_printPageNumberFirst, -1);
-      widestrcpy(ud->print_page_number_last, saved_printPageNumberLast, -1);
+      widestrcpy(ud->print_page_number, saved_printPageNumber);
+      widestrcpy(ud->print_page_number_first, saved_printPageNumberFirst);
+      widestrcpy(ud->print_page_number_last, saved_printPageNumberLast);
       do_newpage ();
       ud->contents = 2;
       currentHeading = firstHeading;
